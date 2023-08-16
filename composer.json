@@ -1,5 +1,5 @@
 {
-  "name": "calrloco/lunar_stripe",
+  "name": "lunarphp/stripe",
   "type": "project",
   "description": "Fork of Lunar Stripe payment driver with custom changes.",
   "keywords": ["lunarphp", "laravel", "ecommerce", "e-commerce", "headless", "store", "shop", "cart", "stripe"],
