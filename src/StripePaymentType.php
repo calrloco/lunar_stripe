@@ -204,7 +204,8 @@ class StripePaymentType extends AbstractPayment
     {
         DB::transaction(function () {
             // Get our first successful charge.
-            $charges = $this->paymentIntent->charges->data;
+            $getCharges = \Stripe\Charge::all(['payment_intent' => $this->paymentIntent->id]);
+            $charges =  $getCharges['data'];
 
             $successCharge = collect($charges)->first(function ($charge) {
                 return ! $charge->refunded && ($charge->status == 'succeeded' || $charge->status == 'paid');
